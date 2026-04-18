@@ -1,0 +1,13 @@
+databaseChangeLog:
+- changeSet:
+    id: 5
+    author: Maksim Charchuk
+    changes:
+    - renameColumn:
+        newColumnName: preview_documents
+        oldColumnName: preview_images
+        tableName: document
+    - renameColumn:
+        newColumnName: processing_documents
+        oldColumnName: processing_images
+        tableName: document

@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Volha Chapko
+    changes:
+      - addColumn:
+          columns:
+            - column:
+                constraints:
+                  nullable: false
+                defaultValue: ml
+                name: extraction_type
+                type: VARCHAR
+          tableName: document_type

@@ -1,0 +1,89 @@
+version: "3.4"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./etc/api/Dockerfile
+      target: develop
+      args:
+        REPOSITORY_URL: "${REPOSITORY_URL}"
+      cache_from:
+        - "document-api-dev:latest"
+    env_file:
+      - ./etc/api/env/.dev.env
+      - .env
+    networks:
+      - deps-network
+    ports:
+      - 8001:8000
+    volumes:
+      - ./src/deps_documents:/app/deps_documents
+      - ./src/tests:/app/tests
+      - ./src/poetry.lock:/app/poetry.lock
+      - ./src/pyproject.toml:/app/pyproject.toml
+      - ./vendors:/vendors
+      - ./src/setup.cfg:/app/setup.cfg
+      - ./src/requirements.txt:/app/requirements.txt
+    stdin_open: true
+    tty: true
+
+  document-consumer:
+    container_name: deps-document-consumer
+    build:
+      context: .
+      dockerfile: ./etc/api/Dockerfile
+      target: develop
+      args:
+        REPOSITORY_URL: "${REPOSITORY_URL}"
+      cache_from:
+        - "document-api-dev:latest"
+    env_file:
+      - ./etc/api/env/.dev.env
+      - .env
+    networks:
+      - deps-network
+    volumes:
+      - ./src/deps_documents:/app/deps_documents
+      - ./src/poetry.lock:/app/poetry.lock
+      - ./src/pyproject.toml:/app/pyproject.toml
+      - ./vendors:/vendors
+    stdin_open: true
+    tty: true
+
+  migrator:
+    build:
+      context: .
+      dockerfile: ./etc/migrator/Dockerfile
+      args:
+        REPOSITORY_URL: "${REPOSITORY_URL}"
+      cache_from:
+        - "document-migrator:latest"
+    env_file: ./etc/migrator/env/.dev.env
+    environment:
+      - MASTER_CHANGELOG=./migrations/master.yaml
+    networks:
+      - deps-network
+    volumes:
+      - ./etc/migrator/migrations:/app/migrations
+
+  fixtures:
+    build:
+      context: .
+      dockerfile: ./etc/migrator/Dockerfile
+      args:
+        REPOSITORY_URL: "${REPOSITORY_URL}"
+      cache_from:
+        - "document-migrator:latest"
+    env_file: ./etc/migrator/env/.dev.env
+    environment:
+      - MASTER_CHANGELOG=./fixtures/master.yaml
+    networks:
+      - deps-network
+    volumes:
+      - ./etc/migrator/fixtures:/app/fixtures
+
+
+networks:
+  deps-network:
+    external: true

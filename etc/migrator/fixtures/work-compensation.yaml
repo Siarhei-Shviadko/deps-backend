@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "work-compensation"
+      author: Ilya Tumash
+      runOnChange: true
+      validChechSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/work-compensation/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/work-compensation/field.csv
+            separator: ","
+            quotchar: "'"
+            encoding: UTF-8
+            tableName: field
+            primaryKey: "code,document_type_code"

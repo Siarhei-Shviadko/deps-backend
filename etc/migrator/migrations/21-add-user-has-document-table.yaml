@@ -1,0 +1,29 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn Cheliabiyeu
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: document_id
+            type: INTEGER
+        - column:
+            name: user_id
+            type: VARCHAR
+        tableName: user_has_document
+- changeSet:
+    id: 2
+    author: Elchyn Cheliabiyeu
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: user_has_document
+        constraintName: user_has_document_document_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: document
+        validate: true

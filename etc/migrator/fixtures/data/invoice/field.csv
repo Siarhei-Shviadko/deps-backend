@@ -1,0 +1,20 @@
+code,name,document_type_code,field_meta,field_type,required,order
+vendorTaxId,Vendor Tax Id,Invoice,{"char_type": "alphanumeric"},string,False,0
+tax1Description,Tax 1 Description,Invoice,{"char_type": "alphanumeric"},string,False,1
+vendorName,Vendor Name,Invoice,{"char_type": "alphanumeric"},string,False,2
+purchaseOrderNo,Purchase Order No,Invoice,{"char_type": "alphanumeric"},string,False,3
+paymentTerms,Payment Terms,Invoice,{"char_type": "alphanumeric"},string,False,4
+tax1Amount,Tax 1 Amount,Invoice,{"char_type": "alphanumeric"},string,False,5
+buyerName,Buyer Name,Invoice,{"char_type": "alphanumeric"},string,False,5
+dueDate,Due Date,Invoice,{"char_type": "alphanumeric"},string,False,6
+invoiceDate,Invoice Date,Invoice,{"char_type": "alphanumeric"},string,False,7
+subtotalAmount,Subtotal Amount,Invoice,{"char_type": "alphanumeric"},string,False,7
+invoiceNo,Invoice No,Invoice,{"char_type": "alphanumeric"},string,False,8
+totalAmount,Total Amount,Invoice,{"char_type": "alphanumeric"},string,False,9
+vendorBankAccountNo,Vendor Bank Account No,Invoice,{"char_type": "alphanumeric"},string,False,10
+billTo,Bill To,Invoice,{"char_type": "alphanumeric"},string,False,11
+vendorAddress,Vendor Address,Invoice,{"char_type": "alphanumeric"},string,False,12
+vendorPhone,Vendor Phone,Invoice,{"char_type": "alphanumeric"},string,False,13
+billToAddress,Bill To Address,Invoice,{"char_type": "alphanumeric"},string,False,14
+project,Project,Invoice,{"char_type": "alphanumeric"},string,False,15
+vatSummary,VAT Summary,Invoice,{"char_type": "alphanumeric"},string,False,16

@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "invoice"
+      author: Ilya Tumash
+      runOnChange: true
+      validChechSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/invoice/source.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: source
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/invoice/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/invoice/field.csv
+            separator: ","
+            quotchar: "'"
+            encoding: UTF-8
+            tableName: field
+            primaryKey: "code,document_type_code"

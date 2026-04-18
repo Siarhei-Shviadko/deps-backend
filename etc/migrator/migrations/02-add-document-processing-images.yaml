@@ -1,0 +1,11 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Viktoriya Kaleda
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: processing_images
+            type: JSONB
+        tableName: document

@@ -1,0 +1,22 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn Cheliabiyeu
+    changes:
+    -  dropColumn:
+        columnName: id
+        tableName: extraction_model
+- changeSet:
+    id: 2
+    author: Elchyn Cheliabiyeu
+    changes:
+    - addColumn:
+        tableName: extraction_model
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+                primaryKey: true
+                primaryKeyName: extraction_model_pkey
+            name: id
+            type: SERIAL

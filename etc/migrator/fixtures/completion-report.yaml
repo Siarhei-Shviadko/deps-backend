@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "completion-report"
+      author: Ilya Tumash
+      runOnChange: true
+      validCheckSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/completion-report/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/completion-report/field.csv
+            separator: ","
+            quotchar: "'"
+            encoding: UTF-8
+            tableName: field
+            primaryKey: "code,document_type_code"

@@ -1,0 +1,35 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Oleksandr Rez
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: group_id_tenant_id_pk
+            name: id
+            type: VARCHAR
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: group_id_tenant_id_pk
+            name: tenant_id
+            type: VARCHAR
+        - column:
+            name: name
+            type: VARCHAR
+            constraints:
+              nullable: false
+        - column:
+            name: is_deleted
+            type: BOOLEAN
+            defaultValueBoolean: false
+            constraints:
+              nullable: false
+        tableName: group
+    rollback:
+      - dropTable:
+        - tableName: group
+

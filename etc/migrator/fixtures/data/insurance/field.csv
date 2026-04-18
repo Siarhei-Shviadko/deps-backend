@@ -1,0 +1,68 @@
+code,name,document_type_code,field_meta,field_type,required,order
+acordTitle,Acord Title,Insurance,{"char_type": "alphanumeric"},string,False,0
+dateAndTimeOfLoss,Date and Time of Loss,Insurance,{"char_type": "alphanumeric"},string,False,1
+dateAndTimeOfLossCheckboxAM,Date and Time of Loss Checkbox AM,Insurance,{},checkbox,False,2
+dateAndTimeOfLossCheckboxPM,Date and Time of Loss Checkbox PM,Insurance,{},checkbox,False,3
+policyNumber,Policy Number,Insurance,{"char_type": "alphanumeric"},string,False,3
+nameOfInsured,Name of Insured,Insurance,{"char_type": "alphanumeric"},string,False,4
+insuredMailingAddress,Insured Mailing Address,Insurance,{"char_type": "alphanumeric"},string,False,5
+insuredPrimaryPhone,Insured primary Phone,Insurance,{"char_type": "alphanumeric"},string,False,6
+insuredPrimaryPhoneHomeCheckbox,Insured primary Phone Home Checkbox,Insurance,{},checkbox,False,7
+insuredPrimaryPhoneBusCheckbox,Insured primary Phone Bus Checkbox,Insurance,{},checkbox,False,8
+insuredPrimaryPhoneCellCheckbox,Insured primary Phone Cell Checkbox,Insurance,{},checkbox,False,9
+insuredPrimaryEmailAddress,Insured primary Email Address,Insurance,{"char_type": "alphanumeric"},string,False,10
+contactName,Contact Name,Insurance,{"char_type": "alphanumeric"},string,False,11
+contactMailingAddress,Contact Mailing Address,Insurance,{"char_type": "alphanumeric"},string,False,12
+contactPrimaryPhone,Contact Primary Phone,Insurance,{"char_type": "alphanumeric"},string,False,13
+contactPrimaryPhoneHomeCheckbox,Contact Primary Phone Home Checkbox,Insurance,{},checkbox,False,14
+contactPrimaryPhoneBusCheckbox,Contact Primary Phone Bus Checkbox,Insurance,{},checkbox,False,15
+contactPrimaryPhoneCellCheckbox,Contact Primary Phone Cell Checkbox,Insurance,{},checkbox,False,16
+сontactPrimaryEmailAddress,Contact Primary Email Address,Insurance,{"char_type": "alphanumeric"},string,False,17
+locationOfLoss,Location Of Loss,Insurance,{"char_type": "alphanumeric"},string,False,18
+cityStateOfLoss,City State Of Loss,Insurance,{"char_type": "alphanumeric"},string,False,19
+countryOfLoss,Country Of Loss,Insurance,{"char_type": "alphanumeric"},string,False,20
+describeLocationOfLoss,Describe Location Of Loss,Insurance,{"char_type": "alphanumeric"},string,False,21
+descriptionOfAccident,Description Of Accident,Insurance,{"char_type": "alphanumeric"},string,False,22
+policeOrFireDepartmentContacted,Police Or Fire Department Contacted,Insurance,{"char_type": "alphanumeric"},string,False,22
+reportNumber,Report Number,Insurance,{"char_type": "alphanumeric"},string,False,23
+insuredVehicleNumber,Insured Vehicle Number,Insurance,{"char_type": "alphanumeric"},string,False,24
+insuredVehicleYear,Insured Vehicle Year,Insurance,{"char_type": "alphanumeric"},string,False,25
+insuredVehicleMake,Insured Vehicle Make,Insurance,{"char_type": "alphanumeric"},string,False,26
+insuredVehicleModel,Insured Vehicle Model,Insurance,{"char_type": "alphanumeric"},string,False,27
+insuredVehicleVIN,Insured Vehicle VIN,Insurance,{"char_type": "alphanumeric"},string,False,28
+insuredVehicleOwnerNameAndAddress,Insured Vehicle Owner Name And Address,Insurance,{"char_type": "alphanumeric"},string,False,29
+insuredVehicleOwnerPrimaryPhoneNumber,Insured Vehicle Owner Primary Phone Number,Insurance,{"char_type": "alphanumeric"},string,False,30
+insuredVehicleOwnerPrimaryPhoneNumberHomeCheckbox,Insured Vehicle Owner Primary Phone Number Home Checkbox,Insurance,{},checkbox,False,31
+insuredVehicleOwnerPrimaryPhoneNumberBusCheckbox,Insured Vehicle Owner Primary Phone Number Bus Checkbox,Insurance,{},checkbox,False,32
+insuredVehicleOwnerPrimaryPhoneNumberCellCheckbox,Insured Vehicle Owner Primary Phone Number Cell Checkbox,Insurance,{},checkbox,False,33
+insuredVehicleOwnerPrimaryEmailAddress,Insured Vehicle Owner Primary Email Address,Insurance,{"char_type": "alphanumeric"},string,False,34
+insuredVehicleDriverNameandAddress,Insured Vehicle Driver Nameand Address,Insurance,{"char_type": "alphanumeric"},string,False,35
+insuredVehicleDriverPrimaryPhoneNumber,Insured Vehicle Driver Primary Phone Number,Insurance,{"char_type": "alphanumeric"},string,False,36
+insuredVehicleDriverPrimaryPhoneNumberHomeCheckbox,Insured Vehicle Driver Primary Phone Number Home Checkbox,Insurance,{},checkbox,False,37
+insuredVehicleDriverPrimaryPhoneNumberBusCheckbox,Insured Vehicle Driver Primary Phone Number Bus Checkbox,Insurance,{},checkbox,False,38
+insuredVehicleDriverPrimaryPhoneNumberCellCheckbox,Insured Vehicle Driver Primary Phone Number Cell Checkbox,Insurance,{},checkbox,False,39
+insuredVehicleDriverPrimaryEmailAddress,Insured Vehicle Driver Primary Email Address,Insurance,{"char_type": "alphanumeric"},string,False,40
+insuredVehicleDriverLicenseNumber,Insured Vehicle Driver License Number,Insurance,{"char_type": "alphanumeric"},string,False,41
+insuredVehicleDriverState,Insured Vehicle Driver State,Insurance,{"char_type": "alphanumeric"},string,False,42
+describeDamage,Describe Damage,Insurance,{"char_type": "alphanumeric"},string,False,43
+ACORDNumberVersion,ACORD Number Version,Insurance,{"char_type": "alphanumeric"},string,False,44
+otherVehicleYear,Other Vehicle Year,Insurance,{"char_type": "alphanumeric"},string,False,45
+otherVehicleMake,Other Vehicle Make,Insurance,{"char_type": "alphanumeric"},string,False,46
+otherVehicleModel,Other Vehicle Model,Insurance,{"char_type": "alphanumeric"},string,False,47
+otherVehicleVin,Other Vehicle Vin,Insurance,{"char_type": "alphanumeric"},string,False,48
+describeProperty,Describe Property,Insurance,{"char_type": "alphanumeric"},string,False,49
+carrierOrAgencyName,Carrier Or Agency Name,Insurance,{"char_type": "alphanumeric"},string,False,50
+otherVehiclePolicyNumber,Other Vehicle Policy Number,Insurance,{"char_type": "alphanumeric"},string,False,51
+otherVehicleOwner’sNameAndAddress,Other Vehicle Owner’s Name And Address,Insurance,{"char_type": "alphanumeric"},string,False,52
+otherVehicleOwner’sPrimaryPhoneNumber,Other Vehicle Owner’s Primary Phone Number,Insurance,{"char_type": "alphanumeric"},string,False,53
+otherVehicleOwner’sPrimaryEmailAddress,Other Vehicle Owner’s Primary Email Address,Insurance,{"char_type": "alphanumeric"},string,False,54
+otherVehicleDriver’sNameAndAddress,Other Vehicle Driver’s Name And Address,Insurance,{"char_type": "alphanumeric"},string,False,55
+otherVehicleDriver’sPrimaryPhoneNumber,Other Vehicle Driver’s Primary Phone Number,Insurance,{"char_type": "alphanumeric"},string,False,56
+otherVehicleDriver’sPrimaryEmailAddress,Other Vehicle Driver’s Primary Email Address,Insurance,{"char_type": "alphanumeric"},string,False,57
+estimateAmount,Estimate Amount,Insurance,{"char_type": "alphanumeric"},string,False,59
+injuredNameAndAddress,Injured Name And Address,Insurance,{"char_type": "alphanumeric"},string,False,60
+injuredPhoneNumber,Injured Phone Number,Insurance,{"char_type": "alphanumeric"},string,False,61
+injuredPedestrianCheckbox,Injured Pedestrian Checkbox,Insurance,{},checkbox,False,62
+injuredInsuredCheckbox,Injured Insured Checkbox,Insurance,{},checkbox,False,63
+injuredOtherVehicleCheckbox,Injured Other Vehicle Checkbox,Insurance,{},checkbox,False,64
+remarks,Remarks,Insurance,{"char_type": "alphanumeric"},string,False,65

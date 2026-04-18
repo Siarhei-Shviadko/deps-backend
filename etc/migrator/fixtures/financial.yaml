@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "financial"
+      author: Ilya Tumash
+      runOnChange: true
+      validChechSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/financial/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"

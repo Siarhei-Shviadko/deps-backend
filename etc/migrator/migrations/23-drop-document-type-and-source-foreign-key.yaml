@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn Cheliabiyeu
+    changes:
+    - dropForeignKeyConstraint:
+       baseTableName: document
+       constraintName: document_document_type_fkey
+- changeSet:
+    id: 2
+    author: Elchyn Cheliabiyeu
+    changes:
+    - dropForeignKeyConstraint:
+       baseTableName: document
+       constraintName: document_source_code_fkey

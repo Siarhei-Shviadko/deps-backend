@@ -1,0 +1,100 @@
+version: '3.4'
+
+services:
+  api:
+    image: "document-api-dev"
+    env_file: ./etc/api/env/.test.env
+    depends_on:
+      - test-database
+      - test-rabbitmq
+      - test-redis
+    volumes:
+      - test-cache:/tmp/test_cache
+      - ./vendors:/vendors
+      - ./src/deps_documents:/app/deps_documents
+      - ./src/tests:/app/tests
+      - ./src/poetry.lock:/app/poetry.lock
+      - ./src/pyproject.toml:/app/pyproject.toml
+      - ./src/setup.cfg:/app/setup.cfg
+
+  migrator:
+    env_file: ./etc/migrator/env/.test.env
+    environment:
+      - MASTER_CHANGELOG=./migrations/master.yaml
+    depends_on:
+      - test-database
+    volumes:
+      - ./etc/migrator/migrations:/app/migrations
+
+  fixtures:
+    env_file: ./etc/migrator/env/.test.env
+    environment:
+      - MASTER_CHANGELOG=./fixtures/master.yaml
+    depends_on:
+      - test-database
+    volumes:
+      - ./etc/migrator/fixtures:/app/fixtures
+
+  test-database:
+    image: "${REPOSITORY_URL}/base/postgres:12.5-alpine"
+    # DB Version: 12
+    # OS Type: linux
+    # DB Type: web
+    # Total Memory (RAM): 512 MB
+    # CPUs num: 2
+    # Connections num: 20
+    # Data Storage: ssd
+    command: postgres
+      -c 'max_connections=20'
+      -c 'shared_buffers=128MB'
+      -c 'effective_cache_size=384MB'
+      -c 'maintenance_work_mem=32MB'
+      -c 'checkpoint_completion_target=0.7'
+      -c 'wal_buffers=3932kB'
+      -c 'default_statistics_target=100'
+      -c 'random_page_cost=1.1'
+      -c 'effective_io_concurrency=200'
+      -c 'work_mem=6553kB'
+      -c 'min_wal_size=1GB'
+      -c 'max_wal_size=4GB'
+      -c 'max_worker_processes=2'
+      -c 'max_parallel_workers_per_gather=1'
+      -c 'max_parallel_workers=2'
+      -c 'max_parallel_maintenance_workers=1'
+    environment:
+      - POSTGRES_HOST=test-database
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=test-deps
+      - POSTGRES_USER=deps-postgres
+      - POSTGRES_PASSWORD=deps-postgres-password
+    volumes:
+      - test-postgres:/var/lib/postgresql/data
+
+  test-rabbitmq:
+    image: "${REPOSITORY_URL}/base/rabbitmq:3.7.8-management-alpine"
+    environment:
+      - RABBITMQ_HOST=test-rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_DEFAULT_VHOST=test-deps
+      - RABBITMQ_DEFAULT_USER=deps-rabbitmq
+      - RABBITMQ_DEFAULT_PASS=deps-rabbitmq-password
+      - RABBITMQ_VHOST=test-deps
+      - RABBITMQ_USER=deps-rabbitmq
+      - RABBITMQ_PASS=deps-rabbitmq-password
+    volumes:
+      - test-rabbitmq:/var/lib/rabbitmq
+
+  test-redis:
+    image: "${REPOSITORY_URL}/base/redis:5.0.1-alpine"
+    environment:
+      - REDIS_HOST=test-redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    volumes:
+      - test-redis:/data
+
+volumes:
+  test-postgres:
+  test-rabbitmq:
+  test-redis:
+  test-cache:

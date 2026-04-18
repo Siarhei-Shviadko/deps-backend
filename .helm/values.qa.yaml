@@ -1,0 +1,54 @@
+backend:
+  image:
+    path: "/deps-platform/deps-document-api"
+  resources: {}
+#    limits:
+#      cpu:
+#      memory:
+#    requests:
+#      cpu:
+#      memory:
+
+
+document_consumer:
+  image:
+    path: "/deps-platform/deps-document-api"
+  resources: {}
+#    limits:
+#      cpu:
+#      memory:
+#    requests:
+#      cpu:
+#      memory:
+
+migrator_update:
+  image:
+    path: "/deps-platform/deps-document-api-migrator"
+
+migrator_fixtures:
+  image:
+    path: "/deps-platform/deps-document-api-migrator"
+
+backend_settings:
+  ENV: qa
+  DATABASE_REQUIRE_SECURE_TRANSPORT: false
+  LOG_LEVEL: "INFO"
+  
+  # Telemetry
+  INSTRUMENTATION_ENABLED: true
+  SERVICE_NAME: deps-documents
+  EXPORTER_TYPE: azure
+
+migration_settings:
+  DATABASE_REQUIRE_SECURE_TRANSPORT: false
+
+helm: 
+  helm_logs_job_enabled: false
+
+csi:
+  vault_namespace: 'k8s-qa'
+  roleName: 'k8s-qa'
+  vaultKubernetesMountPath: 'kubernetes-qa'
+
+service_account:
+  serviceAccountName: 'deps-qa'

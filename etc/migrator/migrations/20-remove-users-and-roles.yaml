@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn Cheliabiyeu
+    changes:
+      - dropTable:
+          cascadeConstraints: true
+          tableName: role
+- changeSet:
+    id: 2
+    author: Elchyn Cheliabiyeu
+    changes:
+      - dropTable:
+          cascadeConstraints: true
+          tableName: users

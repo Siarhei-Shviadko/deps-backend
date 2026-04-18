@@ -1,0 +1,11 @@
+code,name,engine,extraction_type
+report,report,TESSERACT,template
+asset,Asset,TESSERACT,template
+building,Building,TESSERACT,template
+building_address,Building Address,TESSERACT,template
+rental_unit,Rental Unit,TESSERACT,template
+lease,Lease,TESSERACT,template
+option,Option,TESSERACT,template
+condition,Condition,TESSERACT,template
+index_series_to_conditions,Index Serties to conditions,TESSERACT,template
+partner,Partner,TESSERACT,template

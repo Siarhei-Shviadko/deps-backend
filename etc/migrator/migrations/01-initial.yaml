@@ -1,0 +1,460 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: comment_pkey
+            name: id
+            type: SERIAL
+        - column:
+            name: document_id
+            type: INTEGER
+        - column:
+            name: text
+            type: VARCHAR
+        - column:
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: email
+            type: VARCHAR
+        - column:
+            name: first_name
+            type: VARCHAR
+        - column:
+            name: last_name
+            type: VARCHAR
+        tableName: comment
+- changeSet:
+    id: 2
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: document_pkey
+            name: id
+            type: SERIAL
+        - column:
+            name: document_part_number
+            type: INTEGER
+        - column:
+            defaultValueComputed: "'{}'::integer[]"
+            name: related_document_ids
+            type: INTEGER[]
+        - column:
+            name: title
+            type: VARCHAR
+        - column:
+            name: state
+            type: VARCHAR
+        - column:
+            name: file
+            type: JSONB
+        - column:
+            name: document_type
+            type: VARCHAR
+        - column:
+            name: date
+            type: TIMESTAMP WITH TIME ZONE
+        - column:
+            name: reviewer
+            type: VARCHAR
+        - column:
+            name: scraped_api_number
+            type: VARCHAR
+        - column:
+            name: preview_images
+            type: JSONB
+        - column:
+            name: extracted_data
+            type: JSONB
+        - column:
+            name: validation_succeeded
+            type: BOOLEAN
+        - column:
+            name: validation_errors
+            type: JSONB
+        - column:
+            name: validation_warnings
+            type: JSONB
+        - column:
+            name: error_description
+            type: VARCHAR
+        - column:
+            name: error_in_state
+            type: VARCHAR
+        - column:
+            name: source_code
+            type: VARCHAR
+        - column:
+            name: files
+            type: JSONB
+        tableName: document
+- changeSet:
+    id: 3
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: document_log_pkey
+            name: id
+            type: SERIAL
+        - column:
+            name: document_id
+            type: INTEGER
+        - column:
+            name: action
+            type: VARCHAR
+        - column:
+            name: previous
+            type: VARCHAR
+        - column:
+            name: current
+            type: VARCHAR
+        - column:
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: actor
+            type: VARCHAR
+        tableName: document_log
+- changeSet:
+    id: 4
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: document_type_pkey
+            name: code
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            defaultValue: TESSERACT
+            name: engine
+            type: VARCHAR
+        tableName: document_type
+- changeSet:
+    id: 5
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: field_pkey
+            name: code
+            type: VARCHAR
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: field_pkey
+            name: document_type_code
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            name: char_type
+            type: VARCHAR
+        - column:
+            name: char_whitelist
+            type: VARCHAR
+        - column:
+            name: char_blacklist
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            defaultValue: value
+            name: field_type
+            type: VARCHAR
+        tableName: field
+- changeSet:
+    id: 6
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: golden_data_pkey
+            name: id
+            type: SERIAL
+        - column:
+            name: document_id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: field_code
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            name: document_type_code
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: false
+            defaultValueComputed: now()
+            name: date
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: user
+            type: VARCHAR
+        tableName: golden_data
+- changeSet:
+    id: 7
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: label_pkey
+            name: name
+            type: VARCHAR(32)
+        tableName: label
+- changeSet:
+    id: 8
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: labels_pkey
+            name: label_name
+            type: VARCHAR
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: labels_pkey
+            name: document_id
+            type: INTEGER
+        tableName: labels
+- changeSet:
+    id: 9
+    author: Viktoriya Kaleda
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primaryKey: true
+              primaryKeyName: source_pkey
+            name: code
+            type: VARCHAR(32)
+        - column:
+            constraints:
+              nullable: false
+            name: title
+            type: VARCHAR(128)
+        tableName: source
+- changeSet:
+    id: 10
+    author: Viktoriya Kaleda
+    changes:
+    - addUniqueConstraint:
+        columnNames: document_id, field_code
+        constraintName: golden_data_document_id_field_code_key
+        tableName: golden_data
+- changeSet:
+    id: 11
+    author: Viktoriya Kaleda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: name
+        indexName: ix_document_type_name
+        tableName: document_type
+- changeSet:
+    id: 12
+    author: Viktoriya Kaleda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: document_id
+        indexName: ix_golden_data_document_id
+        tableName: golden_data
+- changeSet:
+    id: 13
+    author: Viktoriya Kaleda
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: field_code
+        indexName: ix_golden_data_field_code
+        tableName: golden_data
+- changeSet:
+    id: 14
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: comment
+        constraintName: comment_document_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: document
+        validate: true
+- changeSet:
+    id: 15
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_type
+        baseTableName: document
+        constraintName: document_document_type_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: code
+        referencedTableName: document_type
+        validate: true
+- changeSet:
+    id: 16
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: document_log
+        constraintName: document_log_document_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: document
+        validate: true
+- changeSet:
+    id: 17
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: source_code
+        baseTableName: document
+        constraintName: document_source_code_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: code
+        referencedTableName: source
+        validate: true
+- changeSet:
+    id: 18
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_type_code
+        baseTableName: field
+        constraintName: field_document_type_code_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: code
+        referencedTableName: document_type
+        validate: true
+- changeSet:
+    id: 19
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: golden_data
+        constraintName: golden_data_document_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: document
+        validate: true
+- changeSet:
+    id: 20
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: field_code,document_type_code
+        baseTableName: golden_data
+        constraintName: golden_data_field_code_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: code,document_type_code
+        referencedTableName: field
+        validate: true
+- changeSet:
+    id: 21
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: labels
+        constraintName: labels_document_id_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: document
+        validate: true
+- changeSet:
+    id: 22
+    author: Viktoriya Kaleda
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: label_name
+        baseTableName: labels
+        constraintName: labels_label_name_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: name
+        referencedTableName: label
+        validate: true
+
+    

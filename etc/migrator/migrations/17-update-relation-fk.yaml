@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Andrei Miadzvedzeu
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: document_relation_through
+            constraintName: fk_relation_type_code
+        - dropForeignKeyConstraint:
+            baseTableName: relation
+            constraintName: fk_parent_type_code
+        - dropForeignKeyConstraint:
+            baseTableName: relation
+            constraintName: fk_relation_type
+        - addForeignKeyConstraint:
+            baseColumnNames: type
+            baseTableName: relation
+            constraintName: fk_relation_type
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: type
+            referencedTableName: relation_type
+        - addForeignKeyConstraint:
+            baseColumnNames: relation_code, relation_type
+            baseTableName: document_relation_through
+            constraintName: fk_relation_type_code
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: code, type
+            referencedTableName: relation
+        - addForeignKeyConstraint:
+            baseColumnNames: parent_code, parent_type
+            baseTableName: relation
+            constraintName: fk_parent_type_code
+            onDelete: CASCADE
+            onUpdate: CASCADE
+            referencedColumnNames: code, type
+            referencedTableName: relation

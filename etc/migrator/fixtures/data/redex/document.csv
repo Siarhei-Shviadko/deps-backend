@@ -1,0 +1,17 @@
+id,title,state,document_type,date
+20,4th floor,new,rental_unit,2020-12-29 09:02:07
+21,3th floor,new,rental_unit,2020-12-29 09:02:07
+22,2nd floor North,new,rental_unit,2020-12-29 09:02:07
+23,2nd floor South,new,rental_unit,2020-12-29 09:02:07
+10,8120200 Ratigen,new,asset,2020-12-29 09:02:07
+11,8120200 Leeds,new,asset,2020-12-29 09:02:07
+24,1st floor,new,rental_unit,2020-12-29 09:02:07
+13,ID 8120200 Ernst Dietrich Platz,new,building,2020-12-29 09:02:07
+16,Raimstrasse 22A,new,building_address,2020-12-29 09:02:07
+12,ID 8120200 Underground Parking,new,building,2020-12-29 09:02:07
+17,Raimstrasse 23,new,building_address,2020-12-29 09:02:07
+18,6th floor & 2 Car Parking Spaces,new,rental_unit,2020-12-29 09:02:07
+19,5th floor & 2 Car Parking Spaces,new,rental_unit,2020-12-29 09:02:07
+25,Lease 1,new,lease,2020-12-29 09:02:07
+26,Lease 2,new,lease,2020-12-29 09:02:07
+27,Lease 3,new,lease,2020-12-29 09:02:07

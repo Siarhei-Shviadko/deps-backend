@@ -1,0 +1,11 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Anton Novikau3
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: sub_type
+            type: VARCHAR
+        tableName: document

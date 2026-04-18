@@ -1,0 +1,274 @@
+code,name,document_type_code,field_type
+code_number,Code Number,asset,string
+street,Street,asset,string
+street_number,Street Number,asset,string
+zip,ZIP,asset,string
+city,City,asset,string
+country,Country,asset,string
+currency,Currency,asset,string
+area,Area,asset,number
+valid_from,valid from,asset,date
+valid_until,valid until,asset,date
+type,Type,asset,number
+years_built,Year(s) Built,asset,string
+renovations,Renovations,asset,string
+acquisition,Acquisition,asset,date
+date_of_tranfer_to_ownership_acquisition,Date of transfer of ownership (Acquisition),asset,date
+date_of_tranfer_to_ownership_disposition,Date of transfer of ownership (Disposition),asset,date
+disposition_date,Disposition Date,asset,date
+longitude,Longitude,asset,number
+latitude,Latitude,asset,number
+municipality,Municipality,asset,string
+gemeindecode_wup,Gemeindecode_wup,asset,string
+canton,Canton,asset,string
+lau1,municip. association (LAU 1),asset,string
+lau2,Municipality (LAU 2),asset,string
+district,District,asset,string
+portfolio_manager,Portfolio Manager,asset,string
+asset_manager,Asset Manager,asset,string
+manager_company,Manager Company,asset,string
+manager,Manager,asset,string
+property_manager_number,Property Manager Number,asset,string
+code_number_accountant,Code Number Accountant,asset,string
+code_number_expert,Code Number Expert,asset,string
+title,Title,asset,string
+acquisitions,Acquisitions?,asset,number
+subtype,Subtype,asset,number
+historical_building_protection,Historical Building Protection,asset,number
+heating_type,Heating Type,asset,number
+strategy_type,Strategy Type,asset,number
+plot_ratio,Plot Ratio,asset,number
+floors,No. of Floors,asset,string
+ownuse_area,\% of Ownuse Area,asset,number
+self_administration,Self-Administration,asset,number
+fpre,Municipality Code (FPRE),asset,string
+owner,Owner,asset,string
+project_manager,Project Manager,asset,string
+caretaker,Caretaker,asset,string
+location_micro_location,Location / Micro Location,asset,string
+micro_location,Micro Location,asset,string
+location,Location,asset,string
+utilisation,Utilisation,asset,string
+renting_situation,Renting situation,asset,string
+building_condition,Building condition,asset,string
+defects,"Defects, Legacy Issues and Ground Contamination",asset,string
+public_easements,Public easements,asset,string
+number_of,Number of,asset,number
+mandator,Mandator,asset,string
+vehicle,Vehicle,asset,string
+code_number,Code Number,building,string
+street,Street,building,string
+street_number,Street Number,building,string
+years_built,Year(s) Built,building,string
+renovations,Renovations,building,string
+valid_from,valid from,building,date
+valid_until,valid until,building,date
+title,Title,building,string
+type,Type,building,number
+egid,EGID,building,string
+cubic_meter_price,Cubic meter price,building,number
+costs,Costs,building,number
+norm,Norm,building,number
+cost_date,Cost date,building,date
+additional_cost_units,Additional Cost Units?,building,number
+memo,Memo,building,string
+building_insurance,Building insurance,building,string
+building_insurance_number,Building insurance number,building,string
+elementary,Elementary,building,number
+water,Water,building,number
+others,Others,building,string
+mandator,Mandator,building,string
+vehicle,Vehicle,building,string
+asset,Asset,building,string
+code_number,Code Number,building_address,string
+street,Street,building_address,string
+street_number,Street Number,building_address,string
+valid_from,valid from,building_address,date
+valid_until,valid until,building_address,date
+property_manager_number,Property Manager Number,building_address,string
+title,Title,building_address,string
+type,Type,building_address,number
+egid,EGID,building_address,string
+years_built,Year(s) Built,building_address,string
+renovations,Renovations,building_address,string
+memo,Memo,building_address,string
+number_of_upper_floors,Number of upper floors,building_address,number
+number_of_basements,Number of basements,building_address,number
+number_of_stairways,Number of stairways,building_address,number
+number_of_lifts,Number of lifts,building_address,number
+num_of_washhouses_laundries,\# of washhouses/laundries,building_address,number
+number_of_bicycle_rooms,Number of bicycle rooms,building_address,number
+mandator,Mandator,building_address,string
+vehicle,Vehicle,building_address,string
+asset,Asset,building_address,string
+building,Building,building_address,string
+code_number,Code Number,rental_unit,string
+property_manager_number,Property Manager Number,rental_unit,string
+title,Title,rental_unit,string
+type,Type,rental_unit,number
+egid,EGID,rental_unit,string
+number_of_rooms,Number of rooms,rental_unit,number
+floor_level,Floor level,rental_unit,number
+location,Location,rental_unit,number
+rental_units,No. of rental units,rental_unit,number
+standart_of_finishes,Standard of Finishes,rental_unit,number
+area,Area,rental_unit,number
+inverstor,Investor,rental_unit,number
+sales_price_owner_occupier,Sales price owner-occupier,rental_unit,number
+minimum_selling_price_3,Minimum selling price 3,rental_unit,number
+acquisition,Acquisition,rental_unit,date
+purchase_price,Purachase Price,rental_unit,number
+date_of_tranfer_of_ownership,Date of transfer of ownership,rental_unit,date
+additional_purchase_costs,Additional purchase costs,rental_unit,number
+sale,Sale,rental_unit,date
+sales_price,Sales price,rental_unit,number
+disposition_date,Disposition Date,rental_unit,date
+additional_selling_costs,Additional selling costs,rental_unit,number
+valid_from,Valid from,rental_unit,date
+valid_until,Valid until,rental_unit,date
+memo,Memo,rental_unit,string
+room_with_water_tap,Room with water tap,rental_unit,number
+wc,WC,rental_unit,number
+bathub,Bathub,rental_unit,number
+shower,Shower,rental_unit,number
+washing_machine,Washing machine,rental_unit,number
+tumbler,Tumbler,rental_unit,number
+balcony,Balcony,rental_unit,number
+screed,Screed,rental_unit,number
+cellar,Cellar,rental_unit,number
+telephone,Telephone,rental_unit,number
+tv_connections,TV connections,rental_unit,number
+created_with_assistant,Created with assistant?,rental_unit,number
+mandator,Mandator,rental_unit,string
+vehicle,Vehicle,rental_unit,string
+asset,Asset,rental_unit,string
+building,Building,rental_unit,string
+building_address,Building Adress,rental_unit,string
+code_number,Code Number,lease,string
+property_manager_number,Property Manager Number,lease,string
+vacancy,Vacancy,lease,number
+vacancy_reason,Vacancy Reason,lease,number
+landlord,Landlord,lease,string
+agent,Agent,lease,string
+tenant,Tenant,lease,string
+spouse_or_partner,Spouse or Partner,lease,string
+partner2,Partner 2,lease,string
+partner3,Partner 3,lease,string
+rental_start_date,Rental Start Date,lease,date
+rental_end_date,Rental End Date,lease,date
+rental_agreement_duration,Rental Agreement Duration,lease,number
+fixed_duration,Fixed Duration,lease,date
+rental_contract_date,Rental Contract Date,lease,date
+first_time_terminable_tenant,First time terminable(Tenant),lease,date
+first_time_terminable_landlord,First time terminable(Landlord),lease,date
+termination_date,Termination Date,lease,number
+renovations,Renovations,lease,string
+notice_period_tenant,Notice period(Tenant),lease,number
+notice_period_landlord,Notice period(Landlord),lease,number
+notice_as_of,Notice As Of,lease,date
+notice,Notice,lease,date
+rainfree_period,Rainfree Period,lease,number
+liability_date,Liability Date,lease,date
+for_use_as,For use as,lease,number
+adjoining_rooms,Adjoining Rooms,lease,string
+joint_or_shared_use,Joint or Shared Use,lease,string
+opted,Opted?,lease,number
+operating_costs_statement,Operating Costs Statement,lease,date
+type,Type,lease,number
+tenant_sector,Tenant Sector,lease,string
+rental_reserve,Rental Reserve,lease,number
+rental_reserve_percent,Rental Reserve %,lease,number
+reason_for_rental_reserve,Reason for Rental Reserve,lease,string
+deposit,Deposit,lease,number
+deposit_due,Deposit Due,lease,number
+deposit_due_date,Deposit Due Date,lease,date
+deposit_payed,Deposit Payed?,lease,number
+area,Area,lease,number
+memo,Memo,lease,string
+mandator,Mandator,lease,string
+vehicle,Vehicle,lease,string
+asset,Asset,lease,string
+building,Building,lease,string
+building_address,Building Adress,lease,string
+rental_unit,Rental Unit,lease,string
+code_number,Code Number,option,string
+property_manager_number,Property Manager Number,option,string
+type,Type,option,number
+subtype,Subtype,option,number
+validity,Validity,option,string
+start_date,Start Date,option,date
+end,End,option,string
+to_be_exercised_until,To be exercided until,option,date
+exercise_mode,Exercise mode,option,string
+to_be_exercised_by,To be exercised by,option,string
+memo,Memo,option,string
+mandator,Mandator,option,string
+vehicle,Vehicle,option,string
+asset,Asset,option,string
+building,Building,option,string
+building_address,Building Adress,option,string
+rental_unit,Rental Unit,option,string
+lease_date,Lease date,option,date
+id,ID,condition,string
+type,Type,condition,number
+subtype,Subtype,condition,number
+source,Source,condition,string
+absolute_relative,Absolute/Relative,condition,number
+reference,Reference,condition,string
+share_in_percent,Share in %,condition,number
+amount,Amount,condition,number
+payment_frequency,Payment Frequency,condition,number
+time_for_payment,Time for Payment,condition,number
+valid_from,valid from,condition,date
+valid_until,valid_until,condition,string
+memo,Memo,condition,string
+mandator,Mandator,condition,string
+vehicle,Vehicle,condition,string
+asset,Asset,condition,string
+building,Building,condition,string
+building_address,Building Adress,condition,string
+rental_unit,Rental Unit,condition,string
+index_series,Index Series,index_series_to_conditions,string
+date,Date,index_series_to_conditions,date
+percentage,Percentage,index_series_to_conditions,number
+model,Model,index_series_to_conditions,number
+date_of_last_adjustment,Date of Last Adjustment,index_series_to_conditions,date
+rhytm,Rhytm,index_series_to_conditions,number
+unit,Unit,index_series_to_conditions,number
+flexibitlity,Flexibitlity,index_series_to_conditions,number
+date_of_next_adjustment,Date of Next Adjustment,index_series_to_conditions,date
+delay_of_adjusment,Delay of Adjustment(months),index_series_to_conditions,number
+direction,Direction,index_series_to_conditions,number
+threshold_percent,Threshold(%),index_series_to_conditions,number
+threshold,Threshold(Pts.),index_series_to_conditions,number
+memo,Memo,index_series_to_conditions,string
+mandator,Mandator,index_series_to_conditions,string
+vehicle,Vehicle,index_series_to_conditions,string
+asset,Asset,index_series_to_conditions,string
+building,Building,index_series_to_conditions,string
+building_address,Building Adress,index_series_to_conditions,string
+rental_unit,Rental Unit,index_series_to_conditions,string
+condition_valid_from,Condition valid from,index_series_to_conditions,date
+condition_type,Condition type,index_series_to_conditions,string
+condition_subtype,Condition subtype,index_series_to_conditions,string
+code_number,Code Number,partner,string
+company,Company,partner,string
+first_name,First Name,partner,string
+name,Name,partner,string
+is_vac_flag,Is Vac Flag,lease,string
+lease_start_date,Lease Start Date,lease,string
+notice_period_tnt_m,Notice Period Tnt M,lease,string
+notice_period_lld_m,Notice Period Lld M,lease,string
+lease_reserve_perc,Lease Reserve Perc,lease,number
+lease_free_period_m,Lease Free Period M,lease,number
+renew_period_m,Renew Period M,lease,number
+lease_end_date,Lease End Date,lease,datetime
+lease_rep_date,Lease Rep Date,lease,datetime
+lease_deposit_due_date,Lease Deposit Due Date,lease,datetime
+fixed_dur_end_date,Fixed Dur End Date,lease,datetime
+first_term_tnt_date,First Term Tnt Date,lease,datetime
+first_term_lld_date,First Term Lld Date,lease,datetime
+notice_date,Notice Date,lease,datetime
+notice_rep_date,Notice Rep Date,lease,datetime
+liab_date,Liab Date,lease,datetime
+service_charge_date,Service Charge Date,lease,datetime

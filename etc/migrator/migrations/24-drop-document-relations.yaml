@@ -1,0 +1,19 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Aliaksei Yurkevich
+    changes:
+    - dropColumn:
+        tableName: document
+        columns:
+          - column:
+              name: document_part_number
+- changeSet:
+    id: 2
+    author: Aliaksei Yurkevich
+    changes:
+    - dropColumn:
+        tableName: document
+        columns:
+          - column:
+              name: related_document_ids

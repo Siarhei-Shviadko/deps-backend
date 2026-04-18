@@ -1,0 +1,53 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Rimma Avakimova
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: VARCHAR(100)
+            constraints:
+              primaryKey: true
+              primaryKeyName: reviewer_pkey
+        - column:
+            name: email
+            type: VARCHAR(100)
+        - column:
+            name: first_name
+            type: VARCHAR(100)
+        - column:
+            name: last_name
+            type: VARCHAR(100)
+        tableName: reviewer
+    rollback:
+      - dropTable:
+        - tableName: reviewer
+- changeSet:
+    id: 2
+    author: Rimma Avakimova
+    changes:
+    - sql:
+        comment: delete dummy user emails
+        sql: UPDATE document SET reviewer = NULL WHERE reviewer = 'system@epam.com';
+    rollback:
+      - sql:
+        comment: set dummy user emails
+        sql: UPDATE document SET reviewer = 'system@epam.com' WHERE state = 'inReview' OR reviewer IS NOT NULL;
+- changeSet:
+    id: 3
+    author: Rimma Avakimova
+    changes:
+    - addForeignKeyConstraint:
+        baseTableName: document
+        baseColumnNames: reviewer
+        constraintName: reviewer_id_fkey
+        onDelete: CASCADE
+        onUpdate: CASCADE
+        referencedTableName: reviewer
+        referencedColumnNames: id
+    rollback:
+      - dropForeignKeyConstraint:
+          baseTableName: document
+          constraintName: reviewer_id_fkey

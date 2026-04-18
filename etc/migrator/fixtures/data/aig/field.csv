@@ -1,0 +1,10 @@
+code,name,document_type_code,field_meta,field_type,required,order
+internetAddress,Primary website,AIG,{"char_type": "alphanumeric"},string,False,0
+dateEstablished,Years of operation,AIG,{},number,False,1
+natureOfApplicantOperations,Applicant primary nature of business,AIG,{"char_type": "alphanumeric"},string,False,2
+nameOfParentOrganization,Name of parent corporation,AIG,{"char_type": "alphanumeric"},string,True,3
+addressOfApplicantOrganization,Address of parent corporation,AIG,{"char_type": "alphanumeric"},string,True,4
+structedLayoffsPercentageOfEmployees,Structed layoffs percentage of employees,AIG,{"char_type": "alphanumeric"},string,False,14
+totalAssetsCurrentYear,Total assets,AIG,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,15
+annualRevenueCurrentYear,Total revenues,AIG,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,True,16
+netRevenueCurrentYear,Net value,AIG,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,18

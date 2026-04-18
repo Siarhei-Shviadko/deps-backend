@@ -1,0 +1,38 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn Cheliabiyeu
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: true
+            name: container_type
+            type: VARCHAR
+        - column:
+            constraints:
+              nullable: true
+            name: container_metadata
+            type: JSONB
+        - column:
+            constraints:
+              nullable: true
+            name: parent_id
+            type: INTEGER
+        tableName: document
+- changeSet:
+    id: 2
+    author: Elchyn Cheliabiyeu
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parent_id
+        baseTableName: document
+        constraintName: parent_id_fkey
+        deferrable: true
+        initiallyDeferred: true
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: document
+        validate: true

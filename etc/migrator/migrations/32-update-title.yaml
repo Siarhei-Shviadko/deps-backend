@@ -1,0 +1,29 @@
+databaseChangeLog:
+
+- changeSet:
+    id: 1
+    author: Tetiana Kuzmuk
+    changes:
+    - sql:
+        comment: create backup table for document
+        sql: CREATE TABLE document_backup AS SELECT id, title FROM document;
+    rollback:
+     - sql:
+         comment: drop backup table
+         sql: DROP TABLE document_backup;
+
+- changeSet:
+    id: 2
+    author: Tetiana Kuzmuk
+    changes:
+    - sql:
+        comment: update title column removing extension
+        sql: UPDATE document SET title = SUBSTR(title,0,LENGTH(title) - POSITION('.' IN REVERSE(title)) + 1);
+
+    rollback:
+     - sql:
+        comment: restore original title in document table
+        sql: UPDATE document d SET title = dbp.title FROM document_backup dbp WHERE d.id = dbp.id;
+
+
+

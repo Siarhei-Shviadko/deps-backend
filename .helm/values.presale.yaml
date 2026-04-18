@@ -1,0 +1,53 @@
+helm_logs_job:
+  serviceAccountName: gitlab-ci
+  image:
+    path: "/base/kubernetes-helm"
+    pullPolicy: Always
+  resources: {}
+
+backend:
+  image:
+    path: "/deps-presale-x01/deps-document-api"
+    pullPolicy: Always
+  resources: {}
+
+document_consumer:
+  image:
+    path: "/deps-presale-x01/deps-document-api"
+    pullPolicy: Always
+  resources: {}
+
+migrator_update:
+  image:
+    path: "/deps-presale-x01/deps-document-api-migrator"
+    pullPolicy: Always
+
+migrator_fixtures:
+  image:
+    path: "/deps-presale-x01/deps-document-api-migrator"
+    pullPolicy: Always
+
+backend_settings:
+  ENV: presale
+  # PostgreSQL
+  DATABASE_PORT: '5432'
+  DATABASE_REQUIRE_SECURE_TRANSPORT: false
+  LOG_LEVEL: "INFO"
+
+migration_settings:
+  DATABASE_PORT: '5432'
+  DATABASE_REQUIRE_SECURE_TRANSPORT: false
+
+  FILE_STORAGE_URL: 'http://file-storage-nginx:8000'
+
+helm: 
+  helm_logs_job_enabled: true
+
+csi:
+  vault_namespace: 'k8s-presale'
+  roleName: 'k8s-presale'
+  vaultKubernetesMountPath: 'kubernetes-presale'
+
+service_account:
+  serviceAccountName: 'deps-presale'
+

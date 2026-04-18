@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Anton Navarka
+    changes:
+    - addColumn:
+        tableName: document
+        columns:
+        - column:
+            name: llm_type
+            type: VARCHAR
+    rollback:
+      - dropColumn:
+          columnName: llm_type
+          tableName: document

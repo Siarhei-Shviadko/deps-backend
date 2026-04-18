@@ -1,0 +1,19 @@
+code,name,document_type_code,field_meta,field_type,required,order
+nameOfParentOrganization,Name of applicant,Travelers,{"char_type": "alphanumeric"},string,True,0
+addressOfApplicantOrganization,Street address,Travelers,{"char_type": "alphanumeric"},string,True,1
+internetAddress,Website address,Travelers,{"char_type": "alphanumeric"},string,False,2
+dateEstablished,Applicant business established year,Travelers,{},number,False,3
+natureOfApplicantOperations,Applicant operations description,Travelers,{"char_type": "alphanumeric"},string,False,4
+fullTimeEmployeesCurrently,Full time employees date of application,Travelers,{},date,True,6
+partTimeEmployeesCurrently,Part time employees date of application,Travelers,{},date,True,7
+fullTimeEmployeesOneYearAgo,Full time employees previous12 months,Travelers,{},number,True,8
+partTimeEmployeesOneYearAgo,Part time employees previous12 months,Travelers,{},number,True,9
+volunteersEmployeesCurrently,Volunteers date of application,Travelers,{},date,True,10
+inependentContractorsDateOfApplication,Inependent contractors date of application,Travelers,{},date,False,11
+totalAssetsCurrentYear,Total assets most recent fye,Travelers,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,12
+totalAssetsPreviousYear,Total assets prior fye,Travelers,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,13
+netAssetsFundBalanceCurrentYear,Net assets most recent fye,Travelers,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,14
+netAssetsFundBalancePreviousYear,Net assets prior fye,Travelers,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,15
+annualRevenueCurrentYear,Revenues most recent fye,Travelers,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,True,16
+annualRevenuePreviousYear,Revenues prior fye,Travelers,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,True,17
+

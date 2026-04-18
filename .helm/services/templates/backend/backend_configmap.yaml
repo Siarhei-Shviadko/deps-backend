@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: document-api-configmap
+  labels:
+    {{- include "deps-backend.labels" . | nindent 4 }}
+data:
+    ENV: {{ .Values.backend_settings.ENV }}
+    FILE_STORAGE_MEDIA_ROOT: {{ .Values.backend_settings.FILE_STORAGE_MEDIA_ROOT }}
+    FILE_STORAGE_URL: {{ .Values.backend_settings.FILE_STORAGE_URL }}
+    OBJECT_STORAGE_MODE: '{{ .Values.backend_settings.OBJECT_STORAGE_MODE }}'
+    OBJECT_STORAGE_TYPE: '{{ .Values.backend_settings.OBJECT_STORAGE_TYPE }}'
+    S3_BUCKET_NAME: '{{ .Values.backend_settings.S3_BUCKET_NAME }}'
+    S3_ENDPOINT_URL: '{{ .Values.backend_settings.S3_ENDPOINT_URL }}'
+    CELERY_BEAT_CRONTAB_INTERVAL: '{{ .Values.backend_settings.CELERY_BEAT_CRONTAB_INTERVAL }}'
+    VALIDATION_API_URL: {{ .Values.backend_settings.VALIDATION_API_URL }}
+    AUTH_VERIFY_SSL: '{{ .Values.backend_settings.AUTH_VERIFY_SSL }}'
+    CREATE_ROLE: {{ .Values.backend_settings.CREATE_ROLE }}
+    READ_ROLE: {{ .Values.backend_settings.READ_ROLE }}
+    WRITE_ROLE: {{ .Values.backend_settings.WRITE_ROLE }}
+    TEST_CLIENT_ID: {{ .Values.backend_settings.TEST_CLIENT_ID }}
+    TEST_CLIENT_SECRET: {{ .Values.backend_settings.TEST_CLIENT_SECRET }}
+    TEST_API_BASE_URL: {{ .Values.backend_settings.TEST_API_BASE_URL }}
+    TEST_ACCESS_TOKEN_URL: {{ .Values.backend_settings.TEST_ACCESS_TOKEN_URL }}
+    TEST_AUTHORIZE_URL: {{ .Values.backend_settings.TEST_AUTHORIZE_URL }}
+    REVIEWER_REASSIGN_ENABLED: '{{ .Values.backend_settings.REVIEWER_REASSIGN_ENABLED }}'
+    DATABASE_PORT: '{{ .Values.backend_settings.DATABASE_PORT }}'
+    DATABASE_DIALECT: {{ .Values.backend_settings.DATABASE_DIALECT }}
+    DATABASE_DRIVER: {{ .Values.backend_settings.DATABASE_DRIVER }}
+    DATABASE_REQUIRE_SECURE_TRANSPORT: '{{ .Values.backend_settings.DATABASE_REQUIRE_SECURE_TRANSPORT }}'
+    PRIORITY_MEDIUM_BOUNDARY: '{{ .Values.backend_settings.PRIORITY_MEDIUM_BOUNDARY }}'
+    PRIORITY_HIGH_BOUNDARY: '{{ .Values.backend_settings.PRIORITY_HIGH_BOUNDARY }}'
+    CORLEONE_API_HOST: {{ .Values.backend_settings.CORLEONE_API_HOST }}
+    CORLEONE_API_PORT: '{{ .Values.backend_settings.CORLEONE_API_PORT }}'
+    CORLEONE_API_ENDPOINT: '{{ .Values.backend_settings.CORLEONE_API_ENDPOINT }}'
+    LOG_LEVEL: '{{ .Values.backend_settings.LOG_LEVEL }}'
+    PARSING_ENABLED: '{{ .Values.backend_settings.PARSING_ENABLED }}'
+    REDIS_HOST: '{{ .Values.backend_settings.REDIS_HOST }}'
+    REDIS_PORT: '{{ .Values.backend_settings.REDIS_PORT }}'
+    REDIS_DB: '{{ .Values.backend_settings.REDIS_DB }}'
+    DOCUMENTATION_ENABLED: '{{ .Values.backend_settings.DOCUMENTATION_ENABLED }}'
+    KAFKA_GROUP_ID: '{{ .Values.backend_settings.KAFKA_GROUP_ID }}'
+    AUTO_VALIDATION_ENABLED: '{{ .Values.backend_settings.AUTO_VALIDATION_ENABLED }}'
+    RABBITMQ_TLS_DLX_PER_QUEUE: '{{ .Values.backend_settings.RABBITMQ_TLS_DLX_PER_QUEUE }}'
+    RABBITMQ_TLS_CONSUMER_STRATEGY: '{{ .Values.backend_settings.RABBITMQ_TLS_CONSUMER_STRATEGY }}'
+    {{ if .Values.backend_settings.RABBITMQ_TLS_ENABLED }}
+    RABBITMQ_TLS_HOST: '{{ .Values.backend_settings.RABBITMQ_TLS_HOST }}'
+    RABBITMQ_TLS_PORT: '{{ .Values.backend_settings.RABBITMQ_TLS_PORT }}'
+    RABBITMQ_TLS_USER: '{{ .Values.backend_settings.RABBITMQ_TLS_USER }}'
+    RABBITMQ_TLS_VHOST: '{{ .Values.backend_settings.RABBITMQ_TLS_VHOST }}'
+    RABBITMQ_TLS_SUBJECT: '{{ .Values.backend_settings.RABBITMQ_TLS_SUBJECT }}'
+    RABBITMQ_TLS_CA_CERT: '{{ .Values.backend_settings.RABBITMQ_TLS_CA_CERT }}'
+    RABBITMQ_TLS_CLIENT_CERT: '{{ .Values.backend_settings.RABBITMQ_TLS_CLIENT_CERT }}'
+    RABBITMQ_TLS_CLIENT_KEY: '{{ .Values.backend_settings.RABBITMQ_TLS_CLIENT_KEY }}'
+    {{ end }}
+    {{ if .Values.backend_settings.DATABASE_REQUIRE_SECURE_TRANSPORT }}
+    DATABASE_SSLKEY: {{ .Values.backend_settings.DATABASE_SSLKEY_PATH }}
+    DATABASE_SSLCERT: {{ .Values.backend_settings.DATABASE_SSLCERT_PATH }}
+    DATABASE_SSLROOTCERT: {{ .Values.backend_settings.DATABASE_SSLROOTCERT_PATH }}
+    {{ end }}
+    {{ if .Values.backend_settings.KAFKA_SECURITY_ENABLED }}
+    KAFKA_SASL_MECHANISM: '{{ .Values.backend_settings.KAFKA_SASL_MECHANISM }}'
+    KAFKA_SECURITY_PROTOCOL: '{{ .Values.backend_settings.KAFKA_SECURITY_PROTOCOL }}'
+    {{ end }}
+    {{ if .Values.backend_settings.message_broker_asb_without_manage_permission }}
+    ASB_SUBSCRIPTION_STRATEGY: '{{ .Values.backend_settings.ASB_SUBSCRIPTION_STRATEGY }}'
+    {{ end }}
+    ASB_TOPIC_NAME: '{{ .Values.backend_settings.ASB_TOPIC_NAME }}'
+    # Telemetry
+    INSTRUMENTATION_ENABLED: '{{ .Values.backend_settings.INSTRUMENTATION_ENABLED }}'
+    SERVICE_NAME: '{{ .Values.backend_settings.SERVICE_NAME }}'
+    EXPORTER_TYPE: '{{ .Values.backend_settings.EXPORTER_TYPE }}'

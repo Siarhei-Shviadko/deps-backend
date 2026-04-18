@@ -1,0 +1,40 @@
+databaseChangeLog:
+- changeSet:
+    id: 4
+    author: Yogesh Kumar
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+                primaryKey: true
+                primaryKeyName: extraction_model_pkey
+                nullable: false
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+                nullable: false
+            name: document_type
+            type: VARCHAR
+        - column:
+            name: field
+            type: VARCHAR
+        - column:
+            name: parent
+            type: VARCHAR
+        - column:
+            name: is_active
+            type: BOOLEAN
+        - column:
+            constraints:
+                nullable: false
+            name: blob_path
+            type: VARCHAR
+        - column:
+            name: datetime_created
+            type: TIMESTAMP WITH TIME ZONE
+        - column:
+            name: metrics
+            type: JSONB
+        tableName: extraction_model

@@ -1,0 +1,25 @@
+code,name,document_type_code,field_meta,field_type,required,order
+nameOfParentOrganization,Name Of Applicant,CHUBB,{"char_type": "alphanumeric"},string,True,0
+addressOfApplicantOrganization,Applicant Principal Address,CHUBB,{"char_type": "alphanumeric"},string,True,1
+dateEstablished,Date Established,CHUBB,{"char_type": "alphanumeric"},string,False,2
+internetAddress,Web Site Address,CHUBB,{"char_type": "alphanumeric"},string,False,3
+officerName,Executive Officer Name,CHUBB,{"char_type": "alphanumeric"},string,False,4
+officerTitle,Executive Officer Title,CHUBB,{"char_type": "alphanumeric"},string,False,5
+officerEmailAddress,Executive Officer Email,CHUBB,{"char_type": "alphanumeric"},string,False,6
+telephone,Executive Officer Phone,CHUBB,'{"char_type": "numeric", "char_whitelist": ["-", "(", ")", " "]}',string,True,7
+executiveOfficerFax,Executive Officer Fax,CHUBB,{"char_type": "alphanumeric"},string,False,8
+natureOfApplicantOperations_1,Nature Of Applicant Business 1,CHUBB,{"char_type": "alphanumeric"},string,False,9
+natureOfApplicantOperations_2,Nature Of Applicant Business 2,CHUBB,{"char_type": "alphanumeric"},string,False,10
+annualRevenueCurrentYear,Total Revenue Recent Year,CHUBB,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,True,12
+totalAssetsCurrentYear,Total Assets Recent Year,CHUBB,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,13
+fullTimeEmployeesCurrently,Full Time Employees Curently Year,CHUBB,{},number,True,14
+fullTimeEmployeesOneYearAgo,Full Time Employees Previous Year,CHUBB,{},number,True,15
+partTimeEmployeesCurrently,Part Time Employees Curently Year,CHUBB,{},number,True,16
+partTimeEmployeesOneYearAgo,Part Time Employees Previous Year,CHUBB,{},number,True,17
+temporaryEmployeesCurrently,Temporary Employees Curently Year,CHUBB,{},number,True,18
+temporaryEmployeesOneYearAgo,Temporary Employees Previous Year,CHUBB,{},number,True,19
+volunteersEmployeesCurrently,Volunteers Curently Year,CHUBB,{},number,False,20
+nonUSBasedEmployeesVolunteersOneYearAgo,Volunteers Previous Year,CHUBB,{},number,False,21
+involuntaryTerminationsPastYear,Involuntary Terminations Past Year,CHUBB,{"char_type": "alphanumeric"},string,False,25
+involuntaryTerminations1YearPrevious,Involuntary Terminations 1 Year Previous,CHUBB,{"char_type": "alphanumeric"},string,False,26
+

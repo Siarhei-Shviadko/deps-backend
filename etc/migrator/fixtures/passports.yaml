@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "passports"
+      author: Ilya Tumash
+      runOnChange: true
+      validChechSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/passports/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/passports/field.csv
+            separator: ","
+            quotchar: "'"
+            encoding: UTF-8
+            tableName: field
+            primaryKey: "code,document_type_code"

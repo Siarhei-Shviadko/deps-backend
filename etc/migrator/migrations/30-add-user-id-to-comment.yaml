@@ -1,0 +1,21 @@
+databaseChangeLog:
+
+- changeSet:
+    id: 1
+    author: Palina Pashkouskaya1
+    changes:
+    - dropColumn:
+        tableName: comment
+        columnName: email
+    - dropColumn:
+        tableName: comment
+        columnName: first_name
+    - dropColumn:
+        tableName: comment
+        columnName: last_name
+    - addColumn:
+        tableName: comment
+        columns:
+        - column:
+            name: user_id
+            type: VARCHAR

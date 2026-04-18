@@ -1,0 +1,135 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Volha Chapko
+    changes:
+      - createTable:
+          tableName: document_template
+          columns:
+          - column:
+              constraints:
+                primaryKey: true
+                primaryKeyName: document_template_pkey
+              name: document_type_code
+              type: VARCHAR
+          - column:
+              constraints:
+                primaryKey: true
+                primaryKeyName: document_template_pkey
+              name: document_template_code
+              type: VARCHAR
+          - column:
+              name: document_source_code
+              type: VARCHAR
+          - column:
+              name: file
+              type: JSONB
+          - column:
+              name: preview_documents
+              type: JSONB
+          - column:
+              name: processing_documents
+              type: JSONB
+          - column:
+              name: state
+              type: VARCHAR
+- changeSet:
+    id: 2
+    author: Volha Chapko
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_type_code
+        baseTableName: document_template
+        constraintName: document_template_document_type_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: code
+        referencedTableName: document_type
+        validate: true
+    - addForeignKeyConstraint:
+          baseColumnNames: document_source_code
+          baseTableName: document_template
+          constraintName: document_template_source_code_fkey
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: code
+          referencedTableName: source
+          validate: true
+- changeSet:
+    id: 3
+    author: Volha Chapko
+    changes:
+      - createTable:
+          tableName: field_template
+          columns:
+          - column:
+              constraints:
+                primaryKey: true
+                primaryKeyName: field_template_pkey
+              name: document_type_code
+              type: VARCHAR
+          - column:
+              constraints:
+                primaryKey: true
+                primaryKeyName: field_template_pkey
+              name: field_code
+              type: VARCHAR
+          - column:
+              constraints:
+                primaryKey: true
+                primaryKeyName: field_template_pkey
+              name: field_template_code
+              type: VARCHAR
+          - column:
+              name: document_source_code
+              type: VARCHAR
+          - column:
+              name: page
+              type: INTEGER
+          - column:
+              name: bbox_meta
+              type: JSONB
+          - column:
+              name: is_one_symbol
+              type: BOOLEAN
+- changeSet:
+    id: 4
+    author: Volha Chapko
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: field_code, document_type_code
+        baseTableName: field_template
+        constraintName: field_template_field_code_and_doc_type_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: code, document_type_code
+        referencedTableName: field
+        validate: true
+    - addForeignKeyConstraint:
+        baseColumnNames: field_template_code, document_type_code
+        baseTableName: field_template
+        constraintName: field_template_doc_template_fkey
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: CASCADE
+        onUpdate: NO ACTION
+        referencedColumnNames: document_template_code, document_type_code
+        referencedTableName: document_template
+        validate: true
+    - addForeignKeyConstraint:
+          baseColumnNames: document_source_code
+          baseTableName: field_template
+          constraintName: field_template_source_code_fkey
+          deferrable: false
+          initiallyDeferred: false
+          onDelete: CASCADE
+          onUpdate: NO ACTION
+          referencedColumnNames: code
+          referencedTableName: source
+          validate: true

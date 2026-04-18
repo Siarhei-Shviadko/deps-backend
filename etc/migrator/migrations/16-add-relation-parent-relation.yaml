@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Andrei Miadzvedzeu
+      changes:
+        - addColumn:
+            tableName: relation
+            columns:
+              - column:
+                  name: parent_code
+                  type: VARCHAR
+              - column:
+                  name: parent_type
+                  type: VARCHAR
+        - addForeignKeyConstraint:
+            baseColumnNames: parent_code, parent_type
+            baseTableName: relation
+            constraintName: fk_parent_type_code
+            onDelete: CASCADE
+            referencedColumnNames: code, type
+            referencedTableName: relation

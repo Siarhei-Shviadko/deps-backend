@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Aleksandr Balykin
+    changes:
+      - createIndex:
+          columns:
+          - column:
+              name: group_id
+          indexName: index_document_group_id
+          tableName: document
+    rollback:
+      - dropIndex:
+          indexName: index_document_group_id
+          tableName: document

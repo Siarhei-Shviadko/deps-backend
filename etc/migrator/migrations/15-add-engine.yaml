@@ -1,0 +1,13 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Ilya Pashkevich
+    changes:
+      - addColumn:
+          columns:
+            - column:
+                constraints:
+                  nullable: true
+                name: engine
+                type: VARCHAR
+          tableName: document

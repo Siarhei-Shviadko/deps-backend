@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn Cheliabiyeu
+    changes:
+    - addColumn:
+        columns: 
+        - column:
+            name: assignment_status
+            type: VARCHAR
+        - column:
+            name: priority
+            type: VARCHAR
+        tableName: document

@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Viktoriya Kaleda
+    changes:
+      - addColumn:
+          columns:
+            - column:
+                constraints:
+                  nullable: true
+                name: language
+                type: VARCHAR
+          tableName: document
+- changeSet:
+    id: 2
+    author: Viktoriya Kaleda
+    changes:
+      - addColumn:
+          columns:
+            - column:
+                constraints:
+                  nullable: true
+                name: language
+                type: VARCHAR
+          tableName: document_type

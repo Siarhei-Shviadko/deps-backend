@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - include:
+      file: ./fixtures/aig.yaml
+  - include:
+      file: ./fixtures/chubb.yaml
+  - include:
+      file: ./fixtures/completion-report.yaml
+  - include:
+      file: ./fixtures/contract.yaml
+  - include:
+      file: ./fixtures/directional-survey.yaml
+  - include:
+      file: ./fixtures/financial.yaml
+  - include:
+      file: ./fixtures/insurance.yaml
+  - include:
+      file: ./fixtures/passports.yaml
+  - include:
+      file: ./fixtures/phly.yaml
+  - include:
+      file: ./fixtures/redex.yaml
+  - include:
+      file: ./fixtures/travelers.yaml
+  - include:
+      file: ./fixtures/work-compensation.yaml

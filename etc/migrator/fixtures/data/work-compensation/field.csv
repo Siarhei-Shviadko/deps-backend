@@ -1,0 +1,33 @@
+code,name,document_type_code,field_meta,field_type,required,order
+agencyNameAndAddress,Agency Name And Address,WorkerCompensation,{"char_type": "alphanumeric"},string,False,0
+company,Company,WorkerCompensation,{"char_type": "alphanumeric"},string,False,1
+underwriter,Underwriter,WorkerCompensation,{"char_type": "alphanumeric"},string,False,2
+applicantName,ApplicantName,WorkerCompensation,{"char_type": "alphanumeric"},string,False,3
+applicantMailingAddress,Applicant Mailing Address,WorkerCompensation,{"char_type": "alphanumeric"},string,False,4
+agencyProducerName,Agency Producer Name,WorkerCompensation,{"char_type": "alphanumeric"},string,False,5
+agencyCsRepresentative,Agency Cs Representative,WorkerCompensation,{"char_type": "alphanumeric"},string,False,6
+agencyOfficePhone,Agency Office Phone,WorkerCompensation,{"char_type": "alphanumeric"},string,False,7
+agencyFax,Agency Fax,WorkerCompensation,{"char_type": "alphanumeric"},string,False,8
+applicantEmailAddress,Applicant Email Address,WorkerCompensation,{"char_type": "alphanumeric"},string,False,9
+applicantFederalEmployerIDNumber,Applicant Federal Employer ID Number,WorkerCompensation,{"char_type": "alphanumeric"},string,False,10
+agencyCustomerID,Agency Customer ID,WorkerCompensation,{"char_type": "alphanumeric"},string,False,11
+locationsLocRow1,Locations Loc Row1,WorkerCompensation,{"char_type": "alphanumeric"},string,False,12
+locationsHighestFloorRow1,Locations Highest Floor Row1,WorkerCompensation,{"char_type": "alphanumeric"},string,False,13
+locationsFullAddressRow1,Locations Full Address Row1,WorkerCompensation,{"char_type": "alphanumeric"},string,False,14
+locationsLocRow2,Locations Loc Row2,WorkerCompensation,{"char_type": "alphanumeric"},string,False,15
+locationsHighestFloorRow2,Locations Highest Floor Row2,WorkerCompensation,{"char_type": "alphanumeric"},string,False,16
+locationsFullAddressRow2,Locations Full Address Row2,WorkerCompensation,{"char_type": "alphanumeric"},string,False,17
+locationsLocRow3,Locations Loc Row3,WorkerCompensation,{"char_type": "alphanumeric"},string,False,18
+locationsHighestFloorRow3,Locations Highest Floor Row3,WorkerCompensation,{"char_type": "alphanumeric"},string,False,19
+locationsFullAddressRow3,Locations Full Address Row3,WorkerCompensation,{"char_type": "alphanumeric"},string,False,20
+billingPlanAgencyBillCheckbox,Billing Plan Agency Bill Checkbox,WorkerCompensation,{},checkbox,False,21
+billingPlanDirectBillCheckbox,Billing Plan Direct Bill Checkbox,WorkerCompensation,{},checkbox,False,22
+proposedEffDate,Proposed Eff Date,WorkerCompensation,{"char_type": "alphanumeric"},string,False,23
+proposedExpDate,Proposed Exp Date,WorkerCompensation,{"char_type": "alphanumeric"},string,False,24
+part1Workers,Part 1 Workers,WorkerCompensation,{"char_type": "alphanumeric"},string,False,25
+part2EmployerLiabilityEachAccident,Part2 Employer Liability Each Accident,WorkerCompensation,{"char_type": "alphanumeric"},string,False,26
+part2EmployerLiabilityDiseasePolicyLimit,Part2 Employer Liability Disease Policy Limit,WorkerCompensation,{"char_type": "alphanumeric"},string,False,27
+part2EmployerLiabilityDiseaseEachEmployee,Part2 Employer Liability Disease Each Employee,WorkerCompensation,{"char_type": "alphanumeric"},string,False,28
+individualsIncludedStateRow1,Individuals Included State Row1,WorkerCompensation,{"char_type": "alphanumeric"},string,False,29
+individualsIncludedLocRow1,Individuals Included Loc Row1,WorkerCompensation,{"char_type": "alphanumeric"},string,False,30
+individualsIncludedNameRow1,Individuals Included Name Row1,WorkerCompensation,{"char_type": "alphanumeric"},string,False,31

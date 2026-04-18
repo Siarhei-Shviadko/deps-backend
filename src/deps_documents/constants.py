@@ -1,0 +1,29 @@
+PROJECT_NAME = "document-api"
+DESCRIPTION = ""
+BASE_API_PREFIX = "/api/document"
+INTERNAL_API_PREFIX = "/api-internal/document"
+SWAGGER_DOC_URL = "/docs"
+
+# PubSub
+DOCUMENTS_EXCHANGER = "Documents"
+DOCUMENT_TYPE_EXCHANGER = "DocumentType"
+GROUP_EXCHANGER = "Group"
+DOCUMENTS_TOPIC = "Document"
+QUEUE = "document-api"
+EXTRACT_DATA_TOPIC = f"{DOCUMENTS_TOPIC}.extract"
+DOCUMENT_DELETED_TOPIC = f"{DOCUMENTS_TOPIC}.deleted"
+DOCUMENT_CHANGED_TOPIC = f"{DOCUMENTS_TOPIC}.type_changed"
+DOCUMENT_IMPORTED_TOPIC = f"{DOCUMENTS_TOPIC}.imported"
+
+FILE_STORAGE_EXCHANGER = "FileStorage"
+FILE_STORAGE_TOPIC = "blob"
+DELETE_FILES = f"{FILE_STORAGE_TOPIC}.delete"
+
+DOCUMENT_COMMANDS_CHANNEL = "DocumentCommands"
+SERVICE_CHANNEL = "DocumentService"
+VALIDATION_COMMANDS_REPLIES_CHANNEL = "ValidationCommandsReplies"
+DOCUMENT_COMMANDS_REPLIES_CHANNEL = "DocumentCommandsReplies"
+COMMANDS_QUEUE = "document-commands"
+
+CLASSIFICATION_COMMANDS_CHANNEL = "ClassificationCommands"
+WORKFLOW_MANAGER_COMMANDS_CHANNEL = "WorkflowManagerCommands"

@@ -1,0 +1,54 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Viktoriya Kaleda
+    changes:
+    - addColumn:
+        tableName: field
+        columns:
+        - column:
+            name: field_meta
+            type: JSONB
+            defaultValueComputed: "'{}'::jsonb"
+            constraints:
+                nullable: false
+- changeSet:
+    id: 2
+    author: Viktoriya Kaleda
+    changes:
+    - dropColumn:
+        tableName: field
+        columnName: char_type
+- changeSet:
+    id: 3
+    author: Viktoriya Kaleda
+    changes:
+    - dropColumn:
+        tableName: field
+        columnName: char_whitelist
+- changeSet:
+    id: 4
+    author: Viktoriya Kaleda
+    changes:
+    - dropColumn:
+        tableName: field
+        columnName: char_blacklist
+- changeSet:
+    id: 5
+    author: Viktoriya Kaleda
+    changes:
+    - dropDefaultValue:
+        tableName: field
+        columnDataType: VARCHAR
+        columnName: field_type
+- changeSet:
+    id: 6
+    author: Alexey Yurkevich
+    changes:
+    - addColumn:
+        tableName: field
+        columns:
+        - column:
+            name: required
+            type: BOOLEAN
+            defaultValueBoolean: false

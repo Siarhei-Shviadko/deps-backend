@@ -1,0 +1,31 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Anastasiia Naumenko
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: document_id
+            type: INTEGER
+            constraints:
+              primaryKey: true
+              primaryKeyName: document_metadata_pkey
+        - column:
+            name: metadata
+            type: JSONB
+            defaultValueComputed: "'{}'::jsonb"
+            constraints:
+              nullable: false
+        tableName: document_metadata
+- changeSet:
+    id: 2
+    author: Anastasiia Naumenko
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: document_id
+        baseTableName: document_metadata
+        constraintName: document_id_metadata_fkey
+        onDelete: CASCADE
+        referencedColumnNames: id
+        referencedTableName: document

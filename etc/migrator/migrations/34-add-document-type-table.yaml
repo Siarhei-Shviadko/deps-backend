@@ -1,0 +1,20 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Aleksandr Balykin
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              primarykey: true
+              primarykeyname: document_type_tenant_pk
+            name: id
+            type: VARCHAR
+        - column:
+            constraints:
+              primarykey: true
+              primarykeyname: document_type_tenant_pk
+            name: tenant
+            type: VARCHAR
+        tableName: type

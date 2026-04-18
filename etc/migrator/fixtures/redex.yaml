@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "redex"
+      author: Ilya Tumash
+      runOnChange: true
+      validCheckSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/redex/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/redex/field.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: field
+            primaryKey: "code,document_type_code"
+        - loadUpdateData:
+            file: ./fixtures/data/redex/relation_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: relation_type
+            primaryKey: "type"
+        - loadUpdateData:
+            file: ./fixtures/data/redex/relation.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: relation
+            primaryKey: "code,type"
+  - changeSet:
+      id: 2
+      context: "redex"
+      author: Ilya Tumash
+      runOnChange: true
+      validCheckSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/redex/document.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document
+            primaryKey: "id"
+        - sql:
+            comment: Update next val for document id to actual number
+            sql: SELECT setval('document_id_seq', max(id)) FROM document;
+

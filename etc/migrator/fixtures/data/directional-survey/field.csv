@@ -1,0 +1,20 @@
+code,name,document_type_code,field_meta,field_type,required,order
+glElevation,GL Elevation,DirectionalSurvey,{},number,False,0
+glElevationFromPlat,GL Elevation from Plat,DirectionalSurvey,{},number,False,1
+verticalReference,Vertical Reference,DirectionalSurvey,{},number,False,2
+kellyBushing,Kelly Bushing,DirectionalSurvey,{},number,False,3
+magneticNorth,Magnetic Declination,DirectionalSurvey,{},number,False,4
+gridConvergence,Grid Convergence,DirectionalSurvey,{},number,False,5
+totalCorrection,Total Correction,DirectionalSurvey,{},number,False,6
+northReference,North Reference,DirectionalSurvey,{"char_type": "alphabetic"},string,False,7
+date,Date,DirectionalSurvey,{},date,False,8
+datum,Datum,DirectionalSurvey,{"char_type": "alphanumeric"},string,False,9
+apiNumber,API Number,DirectionalSurvey,'{"char_type": "alphanumeric", "char_whitelist": ["-"]}',string,False,10
+latitude,Latitude,DirectionalSurvey,{},coordinates,False,11
+longitude,Longitude,DirectionalSurvey,{},coordinates,False,12
+rigName,Rig Name,DirectionalSurvey,{"char_type": "alphabetic"},string,False,13
+wellName,Well Name,DirectionalSurvey,{"char_type": "alphanumeric"},string,False,14
+leaseName,Lease Name,DirectionalSurvey,{"char_type": "alphabetic"},string,False,15
+surveyCompany,Survey Company,DirectionalSurvey,{"char_type": "alphabetic"},string,False,16
+surveyType,Survey Type,DirectionalSurvey,{"char_type": "alphabetic"},string,False,17
+citingType,Citing Type,DirectionalSurvey,{"char_type": "alphabetic"},string,False,18

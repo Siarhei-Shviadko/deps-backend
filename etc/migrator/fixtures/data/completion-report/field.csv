@@ -1,0 +1,5 @@
+code,name,document_type_code,field_meta,field_type,required,order
+proppantMass,Proppant Mass,CompletionReport,{},number,False,0
+proppantName,Proppant Name,CompletionReport,{"char_type": "alphabetic"},string,False,1
+perforationStart,Perforation Start,CompletionReport,{},number,False,2
+perforationEnd,Perforation End,CompletionReport,{},number,False,3

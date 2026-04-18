@@ -1,0 +1,110 @@
+databaseChangeLog:
+
+- changeSet:
+    id: 1
+    author: Palina Pashkouskaya1
+    changes:
+    - addColumn:
+        tableName: label
+        columns:
+        - column:
+            name: id
+            autoIncrement: true
+            type: SERIAL
+
+- changeSet:
+    id: 2
+    author: Palina Pashkouskaya1
+    changes:
+    - addColumn:
+        tableName: labels
+        columns:
+        - column:
+            name: label_id
+            type: INTEGER
+
+- changeSet:
+    id: 3
+    author: Palina Pashkouskaya1
+    changes:
+    - sql:
+        comment: set label_id column
+        sql: UPDATE labels SET label_id = (SELECT label.id FROM label WHERE labels.label_name = label.name);
+
+- changeSet:
+    id: 4
+    author: Palina Pashkouskaya1
+    changes:
+    - dropForeignKeyConstraint:
+        constraintName: labels_label_name_fkey
+        baseTableName: labels
+    - dropColumn:
+        tableName: labels
+        columnName: label_name
+
+- changeSet:
+    id: 5
+    author: Palina Pashkouskaya1
+    changes:
+    - dropPrimaryKey:
+        tableName: label
+        constraintName: label_pkey
+    - addPrimaryKey:
+        tableName: label
+        columnNames: id
+        constraintName: label_pkey
+
+- changeSet:
+    id: 6
+    author: Palina Pashkouskaya1
+    changes:
+    - addForeignKeyConstraint:
+        baseTableName: labels
+        baseColumnNames: label_id
+        constraintName: labels_label_id_fkey
+        onDelete: CASCADE
+        onUpdate: CASCADE
+        referencedTableName: label
+        referencedColumnNames: id
+    - addPrimaryKey:
+        tableName: labels
+        columnNames: label_id, document_id
+        constraintName: labels_pkey
+
+- changeSet:
+    id: 7
+    author: Palina Pashkouskaya1
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: label_id
+            type: INTEGER
+        - column:
+            name: organisation_name
+            type: VARCHAR
+        tableName: organisation_has_label
+
+- changeSet:
+    id: 8
+    author: Palina Pashkouskaya1
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: label_id
+        baseTableName: organisation_has_label
+        constraintName: organisation_has_label_label_id_fkey
+        onDelete: CASCADE
+        referencedColumnNames: id
+        referencedTableName: label
+    - addPrimaryKey:
+        tableName: organisation_has_label
+        columnNames: label_id, organisation_name
+        constraintName: organisation_has_label_pkey
+
+- changeSet:
+    id: 9
+    author: Palina Pashkouskaya1
+    changes:
+    - sql:
+        comment: add existing labels to organisation deps_users
+        sql: INSERT INTO organisation_has_label (label_id, organisation_name) SELECT id, 'deps_users' from label;

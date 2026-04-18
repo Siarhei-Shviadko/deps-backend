@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Andrei Miadzvedzeu
+      changes:
+        - dropUniqueConstraint:
+            tableName: relation
+            constraintName: relation_unique_key_type_key
+        - renameColumn:
+            tableName: relation
+            oldColumnName: unique_key
+            newColumnName: code
+  - changeSet:
+      id: 2
+      author: Andrei Miadzvedzeu
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: document_relation_through
+            constraintName: fk_relation
+        - dropColumn:
+            tableName: document_relation_through
+            columns:
+              - column:
+                  name: relation_id
+        - dropPrimaryKey:
+            tableName: relation
+        - addPrimaryKey:
+            tableName: relation
+            columnNames: code, type
+            constraintName: type_code_pk
+        - dropColumn:
+            tableName: relation
+            columns:
+              - column:
+                  name: id
+  - changeSet:
+      id: 3
+      author: Andrei Miadzvedzeu
+      changes:
+        - addColumn:
+            tableName: document_relation_through
+            columns:
+              - column:
+                  name: relation_code
+                  type: VARCHAR
+              - column:
+                  name: relation_type
+                  type: VARCHAR
+        - addForeignKeyConstraint:
+            baseColumnNames: relation_code, relation_type
+            baseTableName: document_relation_through
+            constraintName: fk_relation_type_code
+            onDelete: CASCADE
+            referencedColumnNames: code, type
+            referencedTableName: relation
+        - addUniqueConstraint:
+            tableName: document_relation_through
+            columnNames: document_id, relation_code, relation_type
+            constraintName: document_relation_uniqkey
+

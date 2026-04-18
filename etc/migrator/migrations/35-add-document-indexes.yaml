@@ -1,0 +1,29 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Aleksandr Balykin
+    changes:
+      - createIndex:
+          columns:
+          - column:
+              name: parent_id
+          indexName: index_document_parent_id
+          tableName: document
+    rollback:
+      - dropIndex:
+          indexName: index_document_parent_id
+          tableName: document
+- changeSet:
+    id: 2
+    author: Aleksandr Balykin
+    changes:
+      - createIndex:
+          columns:
+          - column:
+              name: document_id
+          indexName: index_organisation_has_document_document_id
+          tableName: organisation_has_document
+    rollback:
+      - dropIndex:
+          indexName: index_organisation_has_document_document_id
+          tableName: organisation_has_document

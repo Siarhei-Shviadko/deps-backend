@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Palina Pashkouskaya
+    changes:
+    - addColumn:
+        tableName: document
+        columns:
+        - column:
+            name: group_id
+            type: VARCHAR
+            constraints:
+              nullable: true
+        - column:
+            name: processing_parameters
+            type: JSONB
+            constraints:
+              nullable: true
+    rollback:
+      - dropColumn:
+          columnName: group_id
+          tableName: document
+      - dropColumn:
+          columnName: processing_parameters
+          tableName: document

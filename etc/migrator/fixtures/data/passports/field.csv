@@ -1,0 +1,14 @@
+code,name,document_type_code,field_meta,field_type,required,order
+Surname,Surname,BelarusPassport,{"char_type": "alphabetic"},string,False,0
+GivenName,Given Name,BelarusPassport,{"char_type": "alphabetic"},string,False,1
+PassportNo,Pasport No,BelarusPassport,{"char_type": "alphanumeric"},string,False,2
+Code,Code of issuing state,BelarusPassport,{"char_type": "alphabetic"},string,False,3
+Type,Type,BelarusPassport,{"char_type": "alphabetic"},string,False,4
+Nationality,Nationality,BelarusPassport,{"char_type": "alphabetic"},string,False,5
+DateOfBirth,Date of birth,BelarusPassport,{},date,False,6
+IDNo,ID number,BelarusPassport,{"char_type": "alphanumeric"},string,False,7
+Sex,Sex,BelarusPassport,'{"options": ["F", "M"]}',enum,False,8
+PlaceOfBirth,Place of birth,BelarusPassport,{"char_type": "alphabetic"},string,False,9
+DateOfIssue,Date of issue,BelarusPassport,{},date,False,10
+DateOfExpiry,Date of expiry,BelarusPassport,{},date,False,11
+Authority,Authority,BelarusPassport,{"char_type": "alphabetic"},string,False,12

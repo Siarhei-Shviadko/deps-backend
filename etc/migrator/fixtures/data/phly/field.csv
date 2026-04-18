@@ -1,0 +1,77 @@
+code,name,document_type_code,field_meta,field_type,required,order
+nameOfParentOrganization,Name Of Parent Organization,PHLY,{"char_type": "alphanumeric"},string,True,0
+addressOfApplicantOrganization,Address Of Applicant Organization,PHLY,{"char_type": "alphanumeric"},string,True,1
+telephone,Telephone,PHLY,'{"char_type": "numeric", "char_whitelist": ["-", "(", ")", " "]}',string,True,2
+internetAddress,Internet Address,PHLY,{"char_type": "alphanumeric"},string,False,3
+dateEstablished,Date Established,PHLY,{},date,False,4
+federalEmployerIdentification,Federal Employer Identification,PHLY,'{"char_type": "numeric", "char_whitelist": ["-"]}',string,False,5
+natureOfApplicantOperations,Nature Of Applicant Operations,PHLY,{"char_type": "alphanumeric"},string,False,6
+taxExemptStatus,Tax Exempt Status,PHLY,{"char_type": "alphanumeric"},string,False,8
+officerName,Officer Name,PHLY,{"char_type": "alphanumeric"},string,False,9
+officerTitle,Officer Title,PHLY,{"char_type": "alphanumeric"},string,False,10
+officerEmailAddress,Officer Email Address,PHLY,{"char_type": "alphanumeric"},string,False,11
+totalAssetsCurrentYear,Total Assets Current Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,12
+totalAssetsPreviousYear,Total Assets Previous Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,13
+netAssetsFundBalanceCurrentYear,Net Assets Fund Balance Current Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,14
+netAssetsFundBalancePreviousYear,Net Assets Fund Balance Previous Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,15
+annualRevenueCurrentYear,Annual Revenue Current Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,True,16
+annualRevenuePreviousYear,Annual Revenue Previous Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,True,17
+netRevenueCurrentYear,Net Revenue Current Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,18
+netRevenuePreviousYear,Net Revenue Previous Year,PHLY,'{"char_type": "numeric", "char_whitelist": [".", ",", "(", ")", "$"]}',string,False,19
+fullTimeEmployeesCurrently,Full Time Employees Currently,PHLY,{},number,True,20
+fullTimeEmployeesOneYearAgo,Full Time Employees One Year Ago,PHLY,{},number,True,21
+fullTimeEmployeesTwoYearsAgo,Full Time Employees Two Years Ago,PHLY,{},number,True,22
+partTimeEmployeesCurrently,Part Time Employees Currently,PHLY,{},number,True,23
+partTimeEmployeesOneYearAgo,Part Time Employees One Year Ago,PHLY,{},number,True,24
+partTimeEmployeesTwoYearsAgo,Part Time Employees Two Years Ago,PHLY,{},number,True,25
+temporaryEmployeesCurrently,Temporary Employees Currently,PHLY,{},number,True,26
+temporaryEmployeesOneYearAgo,Temporary Employees One Year Ago,PHLY,{},number,True,27
+temporaryEmployeesTwoYearsAgo,Temporary Employees Two Years Ago,PHLY,{},number,True,28
+volunteersEmployeesCurrently,Volunteers Employees Currently,PHLY,{},number,True,29
+volunteersOneYearAgo,Volunteers One Year Ago,PHLY,{},number,True,30
+volunteersTwoYearsAgo,Volunteers Two Years Ago,PHLY,{},number,True,31
+nonUSBasedEmployeesVolunteersCurrently,Non US Based Employees Volunteers Currently,PHLY,{},number,False,32
+nonUSBasedEmployeesVolunteersOneYearAgo,Non US Based Employees Volunteers One Year Ago,PHLY,{},number,False,33
+nonUSBasedEmployeesVolunteersTwoYearsAgo,Non US Based Employees Volunteers Two Years Ago,PHLY,{},number,False,34
+totalSumOfAboveCurrently,Total Sum Of Above Currently,PHLY,{},number,False,35
+totalSumOfAboveOneYearAgo,Total Sum Of Above One Year Ago,PHLY,{},number,False,36
+totalSumOfAboveTwoYearsAgo,Total Sum Of Above Two Years Ago,PHLY,{},number,False,37
+employeesTerminatedVoluntary,Employees Terminated Voluntary,PHLY,{},number,False,38
+employeesTerminatedInvoluntary,Employees Terminated Involuntary,PHLY,{},number,False,39
+employeesLaidOff,Employees Laid Off,PHLY,{},number,False,40
+employeesDemoted,Employees Demoted,PHLY,{},number,False,41
+reductionOrChangeOfStatusNextYearVoluntary,Reduction Or Change Of Status Next Year Voluntary,PHLY,{},number,False,42
+reductionOrChangeOfStatusNextYearInvoluntary,Reduction Or Change Of Status Next Year Involuntary,PHLY,{},number,False,43
+reductionOrChangeOfStatusNextYearLayoffs,Reduction Or Change Of Status Next Year Layoffs,PHLY,{},number,False,44
+reductionOrChangeOfStatusNextYearDemotions,Reduction Or Change Of Status Next Year Demotions,PHLY,{},number,False,45
+planNameRowA,Plan Name Row A,PHLY,{"char_type": "alphanumeric"},string,True,52
+yearEstablishedRowA,Year Established Row A,PHLY,{"char_type": "alphanumeric"},string,True,53
+assetsRowA,Assets Row A,PHLY,{"char_type": "alphanumeric"},string,True,54
+typeRowA,Type Row A,PHLY,{"char_type": "alphanumeric"},string,True,55
+participantsRowA,Participants Row A,PHLY,{"char_type": "alphanumeric"},string,True,56
+administratorRowA,Administrator Row A,PHLY,{"char_type": "alphanumeric"},string,True,57
+planNameRowB,Plan Name Row B,PHLY,{"char_type": "alphanumeric"},string,True,58
+yearEstablishedRowB,Year Established Row B,PHLY,{"char_type": "alphanumeric"},string,True,59
+assetsRowB,Assets Row B,PHLY,{"char_type": "alphanumeric"},string,True,60
+typeRowB,Type Row B,PHLY,{"char_type": "alphanumeric"},string,True,61
+participantsRowB,Participants Row B,PHLY,{"char_type": "alphanumeric"},string,True,62
+administratorRowB,Administrator Row B,PHLY,{"char_type": "alphanumeric"},string,True,63
+planNameRowC,Plan Name Row C,PHLY,{"char_type": "alphanumeric"},string,True,64
+yearEstablishedRowC,Year Established Row C,PHLY,{"char_type": "alphanumeric"},string,True,65
+assetsRowC,Assets Row C,PHLY,{"char_type": "alphanumeric"},string,True,66
+typeRowC,Type Row C,PHLY,{"char_type": "alphanumeric"},string,True,67
+participantsRowC,Participants Row C,PHLY,{"char_type": "alphanumeric"},string,True,68
+administratorRowC,Administrator Row C,PHLY,{"char_type": "alphanumeric"},string,True,69
+planNameRowD,Plan Name Row D,PHLY,{"char_type": "alphanumeric"},string,True,70
+yearEstablishedRowD,Year Established Row D,PHLY,{"char_type": "alphanumeric"},string,True,71
+assetsRowD,Assets Row D,PHLY,{"char_type": "alphanumeric"},string,True,72
+typeRowD,Type Row D,PHLY,{"char_type": "alphanumeric"},string,True,73
+participantsRowD,Participants Row D,PHLY,{"char_type": "alphanumeric"},string,True,74
+administratorRowD,Administrator Row D,PHLY,{"char_type": "alphanumeric"},string,True,75
+agency,Agency,PHLY,{"char_type": "alphanumeric"},string,False,76
+producer,Producer,PHLY,{"char_type": "alphanumeric"},string,False,77
+agencyTaxpayerID,Agency taxpayer ID,PHLY,{"char_type": "alphanumeric"},string,False,78
+producerLicenseNo,Producer license No,PHLY,{"char_type": "alphanumeric"},string,False,79
+address,Address,PHLY,{"char_type": "alphanumeric"},string,False,80
+producerNumber,Producer Number,PHLY,{},number,False,81
+

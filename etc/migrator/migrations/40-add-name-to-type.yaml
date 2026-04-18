@@ -1,0 +1,27 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Anas Kaarov
+    changes:
+    - sql:
+        sql: "TRUNCATE TABLE type;"
+- changeSet:
+    id: 2
+    author: Anas Kaarov
+    changes:
+    - addColumn:
+        tableName: type
+        columns:
+        - column:
+            name: name
+            type: VARCHAR
+- changeSet:
+    id: 3
+    author: Anas Kaarov
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: name
+        indexName: ix_type_name
+        tableName: type

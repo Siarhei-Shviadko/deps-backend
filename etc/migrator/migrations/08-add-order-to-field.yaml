@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Elchyn CHeliabiyeu
+    changes:
+      - addColumn:
+          columns:
+            - column:
+                constraints:
+                  nullable: false
+                defaultValue: 0
+                name: order
+                type: INTEGER
+          tableName: field
+

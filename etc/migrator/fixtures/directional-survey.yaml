@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      context: "directional-survey"
+      author: Ilya Tumash
+      runOnChange: true
+      validCheckSum: any
+      changes:
+        - loadUpdateData:
+            file: ./fixtures/data/directional-survey/document_type.csv
+            separator: ","
+            encoding: UTF-8
+            tableName: document_type
+            primaryKey: "code"
+        - loadUpdateData:
+            file: ./fixtures/data/directional-survey/field.csv
+            separator: ","
+            quotchar: "'"
+            encoding: UTF-8
+            tableName: field
+            primaryKey: "code,document_type_code"

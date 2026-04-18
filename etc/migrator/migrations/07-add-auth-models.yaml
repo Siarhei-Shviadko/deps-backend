@@ -1,0 +1,60 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: Sergey Konik
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: false
+            constraints:
+              primaryKey: true
+              primaryKeyName: role_pkey
+            name: name
+            type: VARCHAR(32)
+        tableName: role
+    - insert:
+          tableName: role
+          columns:
+              - column:
+                    name: name
+                    value: "user"
+    - insert:
+          tableName: role
+          columns:
+              - column:
+                    name: name
+                    value: "admin"
+- changeSet:
+    id: 2
+    author: Sergey Konik
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: users_pkey
+            name: id
+            type: SERIAL
+        - column:
+            name: role_id
+            type: VARCHAR(32)
+            constraints:
+              nullable: false
+              foreignKeyName: fk_users_role
+              references: role(name)
+        - column:
+            name: user_name
+            type: VARCHAR(128)
+        - column:
+              name: name
+              type: VARCHAR(64)
+        - column:
+            name: password
+            type: VARCHAR(64)
+        - column:
+            name: uuid
+            type: VARCHAR(32)
+        tableName: users

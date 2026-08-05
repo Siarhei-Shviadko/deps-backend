@@ -21,6 +21,7 @@ class CreateDocumentFromFile(Command):
     metadata: dict[str, Any] | None = None
     assigned_to_me: bool = False
     start_processing: bool = False
+    label_ids: list[str] | None = None
 
 
 @dataclass

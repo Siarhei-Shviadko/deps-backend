@@ -26,6 +26,7 @@ from deps_documents.domain.constants import (
 from deps_documents.domain.entities import (
     ContainerEmailMetadata,
     DocumentEntityPk,
+    LabelEntityPk,
     ParsingFeature,
 )
 from deps_documents.domain.exceptions import BusinessException
@@ -121,6 +122,9 @@ def create_document_from_file_handler(
             group_id=command_message.command.group_id,
             assign_to_me=command_message.command.assigned_to_me,
             start_processing=command_message.command.start_processing,
+            label_ids=[LabelEntityPk(label) for label in command_message.command.label_ids]
+            if command_message.command.label_ids
+            else None,
         )
 
     except BusinessException as e:
